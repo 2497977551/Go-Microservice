@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package test;
+option go_package = ".;Protobuf";
+
+message Persons{
+    string name = 1;
+    string addr = 2;
+    repeated int64 phone_number = 3;
+
+}

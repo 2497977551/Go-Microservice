@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package Protobuf;
+option go_package="github.com/MicroService/Protobuf";
+
+
+enum Demo{
+    //option allow_alias = true表示可以取别名，可以多个字段使用同一个tag
+    option allow_alias = true;
+    A = 0;
+    B = 1;
+    c = 1;
+}
+
+message HH{
+    string a = 1;
+
+    // reserved保留tag或者字段
+    reserved 1,2,3,4, 5 to 100;
+    reserved "c","g";
+}

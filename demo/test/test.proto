@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package test;
+option go_package = "./;test";
+
+message ShopRequest{
+  int32 product_id = 1;
+  string product_name = 2;
+  float product_price = 3;
+  int32 product_number = 4;
+  bool is_vip = 5;
+}
+
+message ShopResponse{
+  int32 product_id = 1;
+  string product_name = 2;
+  float product_price = 3;
+  int32 product_number = 4;
+  bool is_vip = 5;
+  string remark = 6;
+}
+
+service ShopServer{
+  rpc Shop(ShopRequest) returns(ShopResponse);
+}
